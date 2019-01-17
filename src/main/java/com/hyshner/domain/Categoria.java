@@ -18,9 +18,9 @@ public class Categoria implements Serializable {
 	private Integer ID;
 	private String nome;
 	
+	public Categoria() {
 	
-	public void Categoria(){}
-
+	}
 
 	public Categoria(Integer iD, String nome) {
 		super();
