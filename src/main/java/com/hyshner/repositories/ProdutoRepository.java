@@ -3,9 +3,13 @@ package com.hyshner.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.hyshner.domain.Estado;
+import com.hyshner.domain.Produto;
+
+
+
+
 
 @Repository
-public interface EstadoRepositorie extends JpaRepository<Estado, Integer> {
+public interface ProdutoRepository extends JpaRepository<Produto, Integer> {
 
 }

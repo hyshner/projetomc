@@ -1,6 +1,7 @@
 package com.hyshner;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 
@@ -14,30 +15,41 @@ import com.hyshner.domain.Cidade;
 import com.hyshner.domain.Cliente;
 import com.hyshner.domain.Endereco;
 import com.hyshner.domain.Estado;
+import com.hyshner.domain.Pagamento;
+import com.hyshner.domain.PagamentoComBoleto;
+import com.hyshner.domain.PagamentoComCartao;
+import com.hyshner.domain.Pedido;
 import com.hyshner.domain.Produto;
+import com.hyshner.domain.enums.EstadoPagamento;
 import com.hyshner.domain.enums.TipoCliente;
-import com.hyshner.repositories.CategoriaRepositorie;
-import com.hyshner.repositories.CidadeRepositorie;
-import com.hyshner.repositories.ClienteRepositorie;
-import com.hyshner.repositories.EnderecoRepositorie;
-import com.hyshner.repositories.EstadoRepositorie;
-import com.hyshner.repositories.ProdutoRepositorie;
+import com.hyshner.repositories.CategoriaRepository;
+import com.hyshner.repositories.CidadeRepository;
+import com.hyshner.repositories.ClienteRepository;
+import com.hyshner.repositories.EnderecoRepository;
+import com.hyshner.repositories.EstadoRepository;
+import com.hyshner.repositories.PagamentoRepository;
+import com.hyshner.repositories.PedidoRepository;
+import com.hyshner.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CursomcApplication implements CommandLineRunner {
 	
 	@Autowired
-	private CategoriaRepositorie catRepo;
+	private CategoriaRepository categoriaRepository;
 	@Autowired
-	private ProdutoRepositorie produtoRepositorie;
+	private ProdutoRepository produtoRepository;
 	@Autowired
-	private EstadoRepositorie estadorepositorie;
+	private EstadoRepository estadoRepository;
 	@Autowired
-	private CidadeRepositorie cidaderepositorie;
+	private CidadeRepository cidadeRepository;
 	@Autowired
-	private ClienteRepositorie clienteRepositorie;
+	private ClienteRepository clienteRepository;
 	@Autowired
-	private EnderecoRepositorie enderecoRepositorie;
+	private EnderecoRepository enderecoRepository;
+	@Autowired
+	private PedidoRepository pedidoRepository;
+	@Autowired
+	private PagamentoRepository pagamentoRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -66,6 +78,19 @@ public class CursomcApplication implements CommandLineRunner {
 		Endereco e1 =new Endereco(null, "Rua Flores", "300", "apt 303", "Jardim", "3822834",cli1,c1);
 		Endereco e2 =new Endereco(null, "Avenida Matos", "105", "sala 800", "centro", "38777012", cli1, c2);
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		Pedido ped1 =new Pedido(null, sdf.parse("30/09/2017 10:32"),cli1 , e1);
+		Pedido ped2 =new Pedido(null, sdf.parse("10/10/2017 19:35"), cli1, e2);
+		
+		Pagamento pgto1 =new PagamentoComCartao(null, EstadoPagamento.QUITADO, ped1, 6);
+		ped1.setPagamento(pgto1);
+		
+		Pagamento pgto2 =new PagamentoComBoleto(null, EstadoPagamento.PENDENTE, ped2, sdf.parse("20/10/2017 00:00"), null);
+		ped2.setPagamento(pgto2);
+		
+		cli1.getPedidos().addAll(Arrays.asList(ped1,ped2));
+		
+		
 		cli1.getEndereco().addAll(Arrays.asList(e1,e2));
 		
 		est1.getCidades().addAll(Arrays.asList(c1));
@@ -80,12 +105,14 @@ public class CursomcApplication implements CommandLineRunner {
 		
 		
 		
-	catRepo.save(Arrays.asList(cat1,cat2));
-	produtoRepositorie.save(Arrays.asList(p1,p2,p3));
-	estadorepositorie.save(Arrays.asList(est1,est2));
-	cidaderepositorie.save(Arrays.asList(c1,c2,c3));
-	clienteRepositorie.save(Arrays.asList(cli1));
-	enderecoRepositorie.save(Arrays.asList(e1,e2));
+	categoriaRepository.save(Arrays.asList(cat1, cat2));
+	produtoRepository.save(Arrays.asList(p1, p2, p3));
+	estadoRepository.save(Arrays.asList(est1, est2));
+	cidadeRepository.save(Arrays.asList(c1, c2, c3));
+	clienteRepository.save(Arrays.asList(cli1));
+	enderecoRepository.save(Arrays.asList(e1, e2));
+	pedidoRepository.save(Arrays.asList(ped1, ped2));
+	pagamentoRepository.save(Arrays.asList(pgto1, pgto2));
 	
 		
 	}

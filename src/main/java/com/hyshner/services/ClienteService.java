@@ -4,14 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hyshner.domain.Cliente;
-import com.hyshner.repositories.ClienteRepositorie;
+import com.hyshner.repositories.ClienteRepository;
 import com.hyshner.services.exeptions.ObjectNotFoudException;
 
 @Service
 public class ClienteService {
 	
 	@Autowired
-	private ClienteRepositorie repo;
+	private ClienteRepository repo;
 	
 	public Cliente buscar(Integer id) {
 		Cliente obj = repo.findOne(id);
