@@ -19,9 +19,14 @@ public class CategoriaService {
 			throw new ObjectNotFoudException("Objeto não encontrado!: id"+ id + "-- tipo: " + Categoria.class.getName() );
 		}
 		return obj;
-				
+					
+
+
+}
+
+	public Categoria insert(Categoria obj) {
+		obj.setId(null);
+		return repo.save(obj);
 		
 	}
-	
-
 }
