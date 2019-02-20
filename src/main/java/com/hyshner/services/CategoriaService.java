@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import com.hyshner.domain.Categoria;
+import com.hyshner.dto.CategoriaDTO;
 import com.hyshner.repositories.CategoriaRepository;
 import com.hyshner.services.exeptions.ObjectNotFoudException;
 
@@ -62,5 +63,9 @@ public class CategoriaService {
 			String direction){
 		PageRequest pageRequest = new PageRequest(page, linesPerPage, Direction.valueOf(direction),orderBy);
 		return repo.findAll(pageRequest);
+	}
+	
+	public Categoria fromDTO (CategoriaDTO objDTO) {
+		return new Categoria( objDTO.getId(),objDTO.getNome());
 	}
 }
