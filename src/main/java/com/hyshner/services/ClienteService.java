@@ -9,9 +9,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
+import com.hyshner.domain.Cidade;
 import com.hyshner.domain.Cliente;
+import com.hyshner.domain.Endereco;
+import com.hyshner.domain.enums.TipoCliente;
 import com.hyshner.dto.ClienteDTO;
+import com.hyshner.dto.ClienteNewDTO;
 import com.hyshner.repositories.ClienteRepository;
+import com.hyshner.repositories.EnderecoRepository;
 import com.hyshner.services.exeptions.ObjectNotFoudException;
 
 @Service
@@ -19,7 +24,8 @@ public class ClienteService {
 	
 	@Autowired
 	private ClienteRepository repo;
-	
+	@Autowired
+	private EnderecoRepository endRepo;
 	public Cliente find(Integer id) {
 		Cliente obj = repo.findOne(id);
 		if(obj==null) {
@@ -32,13 +38,16 @@ public class ClienteService {
 	
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
-		return repo.save(obj);
+		obj = repo.save(obj);
+		endRepo.save(obj.getEndereco());
+		return obj;
 		
 	}
 
 	public Cliente update(Cliente obj) {
-		find(obj.getId());
-		return repo.save(obj);
+		Cliente newObj = find(obj.getId());
+		updateData (newObj,obj);
+		return repo.save(newObj);
 	}
 
 	public void delete(Integer id) {
@@ -67,5 +76,22 @@ public class ClienteService {
 	
 	public Cliente fromDTO (ClienteDTO objDTO) {
 		return new Cliente(objDTO.getId(),objDTO.getNome(),objDTO.getEmail(),null,null);
+	}
+	
+	public Cliente fromDTO(ClienteNewDTO objDTO) {
+		Cliente cli = new Cliente(null, objDTO.getNome(), objDTO.getEmail(), objDTO.getCpfOuCnpj(), TipoCliente.ToEnum(objDTO.getTipo()));
+		Cidade cid = new Cidade(objDTO.getCidadeId(), null, null);
+		Endereco end = new Endereco(null, objDTO.getLogradouro(), objDTO.getNumero(), objDTO.getComplemento(), objDTO.getBairro(), objDTO.getCep(), cli, cid);
+		cli.getEndereco().add(end);
+		cli.getTelefones().add(objDTO.getTelefone1());
+		if (objDTO.getTelefone2()!=null) {
+			cli.getTelefones().add(objDTO.getTelefone2());
+		}
+		return cli;
+	}
+	
+	private void updateData(Cliente newObj,Cliente obj) {
+		newObj.setNome(obj.getNome());
+		newObj.setEmail(obj.getEmail());
 	}
 }
