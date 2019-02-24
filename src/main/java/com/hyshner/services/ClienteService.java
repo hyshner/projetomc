@@ -56,7 +56,7 @@ public class ClienteService {
 		repo.delete(id);
 		}
 		catch(DataIntegrityViolationException x) {
-			throw new com.hyshner.services.exeptions.DataIntegrityViolationException("Não é possivel excluir uma categoria com produtos");
+			throw new com.hyshner.services.exeptions.DataIntegrityViolationException("Não é possivel excluir, há pedidos existentes");
 		}
 		
 	}
