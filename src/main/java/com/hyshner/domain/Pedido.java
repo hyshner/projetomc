@@ -58,7 +58,13 @@ public class Pedido implements Serializable {
 	}
 
 
-
+	public Double getValortotal() {
+		double soma = 0.0;
+		for(ItemPedido ip: itens) {
+			soma =+ ip.getSubtotal();
+		}
+		return soma;
+	}
 
 
 
