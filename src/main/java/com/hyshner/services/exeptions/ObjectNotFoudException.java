@@ -1,7 +1,5 @@
 package com.hyshner.services.exeptions;
 
-import javassist.tools.rmi.ObjectNotFoundException;
-
 public class ObjectNotFoudException extends RuntimeException {
 
 	
