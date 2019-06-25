@@ -1,0 +1,173 @@
+[33mcommit 5690460f4298ffe13112f31884e29a6bd7872156[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: hyshner <iuri.ferreira91@gmail.com>
+Date:   Sat Mar 2 18:45:06 2019 -0300
+
+    criando perfil de desenvolvimento
+
+[33mcommit 7ed833eb69a83ea29c9f10716c41e4915f56f929[m
+Author: hyshner <iuri.ferreira91@gmail.com>
+Date:   Sat Mar 2 17:01:59 2019 -0300
+
+    criando profile de teste
+
+[33mcommit 04a8946eb9d47cc255d4681cf4a54de0df71560a[m
+Author: hyshner <iuri.ferreira91@gmail.com>
+Date:   Sat Mar 2 15:23:14 2019 -0300
+
+    criando o post de pedido
+
+[33mcommit ace7ee7e58f6241c34f67172f0f3929896875ea2[m
+Author: hyshner <iuri.ferreira91@gmail.com>
+Date:   Tue Feb 26 23:06:20 2019 -0300
+
+    subtotal e valor total dos pedidos
+
+[33mcommit 2be6f9d0ebcf0ba69c712767aa53e073acc5defa[m
+Author: hyshner <iuri.ferreira91@gmail.com>
+Date:   Tue Feb 26 22:52:43 2019 -0300
+
+    busca de produtos por nome e categorias
+
+[33mcommit c645b4940bf262406624dc1645991d81b8f9e483[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Sun Feb 24 12:58:40 2019 -0300
+
+    validação customizada de cpf ou cnpj
+
+[33mcommit e535eb5c6ccfbf72c173c7aa631fc49453d9215e[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Feb 21 22:58:09 2019 -0300
+
+    inserindo um novo cliente com post
+
+[33mcommit 89469fe8bea0dff2de782cb508d817bf7834b11a[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Feb 21 21:25:02 2019 -0300
+
+    coreções
+
+[33mcommit 7a8ad4e9ed0613083103edabf9954bc269493847[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Feb 21 21:00:02 2019 -0300
+
+    PUT, DELETE e GET para cliente
+
+[33mcommit 36a9129596923ec8d172b473213ff454d6afc135[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Tue Feb 19 22:44:47 2019 -0300
+
+    personalização do retorno de erro
+
+[33mcommit 86d346d81f04f5aa055ada2106e49a15ce383e6c[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Tue Feb 19 19:29:44 2019 -0300
+
+    paginação com parâmetros opcionais
+
+[33mcommit cb14a6cd676dc5dee840492f31b7ba6e41d5c122[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Fri Jan 25 11:14:06 2019 -0200
+
+    listar todasas categorias com DTO
+
+[33mcommit 363466eb15ef85d2302192902128739818f862dd[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Jan 24 23:01:17 2019 -0200
+
+    excluindo uma categoria com DELETE
+
+[33mcommit 1a04d57b0c009e95ae23faf407d3644781f64502[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Jan 24 21:36:55 2019 -0200
+
+    atualizar categorias com PUT
+
+[33mcommit b8b10fd05be769e70c26ec33e9ce3774ec7a5c67[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Jan 24 20:44:05 2019 -0200
+
+    criando categorias com post
+
+[33mcommit 8d7a8316db4ca7f76387cbf2121d1a357135892f[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Wed Jan 23 23:37:10 2019 -0200
+
+    endpoint pedidos (algo  a se reparar)
+
+[33mcommit d7fc6e2ee131420582fd791d660e456689e9fc3e[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Wed Jan 23 22:15:04 2019 -0200
+
+    itemPedido e itemPedidopk
+
+[33mcommit f1b6e04855ec05c0cdaa7d247eeb141c8b11884b[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Wed Jan 23 20:36:03 2019 -0200
+
+    pedido,estado pagamento e pagamento
+
+[33mcommit ff27b01bd6d62cf7eb512634fb13f8aa66652d9c[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Wed Jan 23 11:45:33 2019 -0200
+
+    criando endpoint /clientes
+
+[33mcommit 32b7d7fc8e178396a8854df860c295ed6676d39d[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Tue Jan 22 22:18:22 2019 -0200
+
+    classes cliente e endereco
+
+[33mcommit 0e07a95d74049d4eb7d658ee94f291ee01e9a793[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Mon Jan 21 22:14:59 2019 -0200
+
+    estado e cidade
+
+[33mcommit 34e32dfc43e66446dee8aea5cf746f50fd32f587[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Mon Jan 21 21:19:24 2019 -0200
+
+    ajustes no endpoit /categorias
+
+[33mcommit 42a516652d1577d59b3d38c4b455e20ec86ced7c[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Mon Jan 21 19:46:56 2019 -0200
+
+    erro da classe resolvido e feita associação
+
+[33mcommit c149ee83ccaa9cadf11064e85343d1e47af5d8ba[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Jan 17 21:23:23 2019 -0200
+
+    resolvido o problema construtor (categoria)
+
+[33mcommit 1421b7e27a6f02cb0239daceb800066ee9fda277[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Jan 17 21:03:52 2019 -0200
+
+    primeira tabela no h2
+
+[33mcommit 0bd6ae88c3812f255ab38dce475b696e79e36a0f[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Thu Jan 17 19:43:01 2019 -0200
+
+    criando banco de dados h2
+
+[33mcommit 5bc8bc93c0829b1a4913c9c88fe024fe2ddbb9d3[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Wed Jan 16 22:50:22 2019 -0200
+
+    primeira classe de dominio- categorias
+
+[33mcommit d1b1d682b56d97a343c9f3357e4fa3cb772aec73[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Wed Jan 16 21:06:13 2019 -0200
+
+    testando o rest
+
+[33mcommit 885644a6909e99b3453dadc68335be495cb4c204[m
+Author: iuri ferreira <iuri.ferreira91@gmail.com>
+Date:   Wed Jan 16 20:05:57 2019 -0200
+
+    projeto criado
