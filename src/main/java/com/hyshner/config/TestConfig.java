@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 
 import com.hyshner.services.DBService;
 import com.hyshner.services.EmailService;
-import com.hyshner.services.mockEmailService;
+import com.hyshner.services.MockEmailService;
 
 @Configuration
 @Profile("test")
@@ -25,7 +25,7 @@ public class TestConfig {
 	}
 	@Bean 
 	public EmailService emailService() {
-		return new mockEmailService();
+		return new MockEmailService();
 	}
 	
 }

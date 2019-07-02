@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.hyshner.domain.Categoria;
 import com.hyshner.domain.Pedido;
-import com.hyshner.dto.CategoriaDTO;
 import com.hyshner.services.PedidoService;
 
 @RestController

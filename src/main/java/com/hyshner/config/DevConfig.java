@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.hyshner.services.DBService;
+import com.hyshner.services.EmailService;
+import com.hyshner.services.SMTPEmailService;
 
 @Configuration
 @Profile("dev")
@@ -25,6 +27,11 @@ public class DevConfig {
 		}
 		dbService.instantiateTestDataBase();
 		return true;
+	}
+	
+	@Bean
+	public EmailService emailService() {
+		return new SMTPEmailService();
 	}
 
 }
