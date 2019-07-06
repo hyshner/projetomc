@@ -1,14 +1,14 @@
 package com.hyshner.domain.enums;
 
-public enum TipoCliente {
+public enum Perfil {
 	
-	PESSOAFISICA(1,"Pessoa Física"),
-	PESSOAJURIDICA(2, "Pessoa Jurídica");
+	ADMIN(1,"ROLE_ADMIN"),
+	CLIENTE(2,"ROLE_CLIENTE");
 	
 	private Integer cod;
 	private String descricao;
 	
-	private TipoCliente(Integer cod, String descricao) {
+	private Perfil(Integer cod, String descricao) {
 		this.cod = cod;
 		this.descricao = descricao;
 	}
@@ -27,11 +27,11 @@ public enum TipoCliente {
 
 
 
-	public static TipoCliente toEnum(Integer cod) {
+	public static Perfil toEnum(Integer cod) {
 		if (cod == null) {
 			return null;
 		}
-		for (TipoCliente x : TipoCliente.values()) {
+		for (Perfil x : Perfil.values()) {
 			if(cod.equals(x.getCod())){
 				return x;
 			}
@@ -40,5 +40,6 @@ public enum TipoCliente {
 		return null;
 	}
 	
+
 
 }

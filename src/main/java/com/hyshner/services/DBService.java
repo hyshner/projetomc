@@ -20,6 +20,7 @@ import com.hyshner.domain.PagamentoComCartao;
 import com.hyshner.domain.Pedido;
 import com.hyshner.domain.Produto;
 import com.hyshner.domain.enums.EstadoPagamento;
+import com.hyshner.domain.enums.Perfil;
 import com.hyshner.domain.enums.TipoCliente;
 import com.hyshner.repositories.CategoriaRepository;
 import com.hyshner.repositories.CidadeRepository;
@@ -90,8 +91,13 @@ public class DBService {
 		
 		cli1.getTelefones().addAll(Arrays.asList("27363323","93838393"));
 		
+		Cliente cli2 = new Cliente(null, "Ana Costa", "nelio.iftm@gmail.com", "31628382740", TipoCliente.PESSOAFISICA, pe.encode("123"));
+		cli2.getTelefones().addAll(Arrays.asList("93883321", "34252625"));
+		cli2.addPerfil(Perfil.ADMIN);
+		
 		Endereco e1 =new Endereco(null, "Rua Flores", "300", "apt 303", "Jardim", "3822834",cli1,c1);
 		Endereco e2 =new Endereco(null, "Avenida Matos", "105", "sala 800", "centro", "38777012", cli1, c2);
+		Endereco e3 = new Endereco(null, "Avenida Floriano", "2106", null, "Centro", "281777012", cli2, c2); 
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 		Pedido ped1 =new Pedido(null, sdf.parse("30/09/2017 10:32"),cli1 , e1);
@@ -106,7 +112,8 @@ public class DBService {
 		cli1.getPedidos().addAll(Arrays.asList(ped1,ped2));
 		
 		
-		cli1.getEndereco().addAll(Arrays.asList(e1,e2));
+		cli1.getEnderecos().addAll(Arrays.asList(e1,e2));
+		cli2.getEnderecos().addAll(Arrays.asList(e3));
 		
 		est1.getCidades().addAll(Arrays.asList(c1));
 		est2.getCidades().addAll(Arrays.asList(c2,c3));
@@ -153,7 +160,8 @@ public class DBService {
 	pedidoRepository.save(Arrays.asList(ped1, ped2));
 	pagamentoRepository.save(Arrays.asList(pgto1, pgto2));
 	itemPedidoRepository.save(Arrays.asList(ip1, ip2, ip3));
-		
+	clienteRepository.save(Arrays.asList(cli1, cli2));
+	enderecoRepository.save(Arrays.asList(e1, e2, e3));
 
 	}
 }

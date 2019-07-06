@@ -43,7 +43,7 @@ public class ClienteService {
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
 		obj = repo.save(obj);
-		endRepo.save(obj.getEndereco());
+		endRepo.save(obj.getEnderecos());
 		return obj;
 		
 	}
@@ -83,10 +83,10 @@ public class ClienteService {
 	}
 	
 	public Cliente fromDTO(ClienteNewDTO objDTO) {
-		Cliente cli = new Cliente(null, objDTO.getNome(), objDTO.getEmail(), objDTO.getCpfOuCnpj(), TipoCliente.ToEnum(objDTO.getTipo()),pe.encode(objDTO.getSenha()));
+		Cliente cli = new Cliente(null, objDTO.getNome(), objDTO.getEmail(), objDTO.getCpfOuCnpj(), TipoCliente.toEnum(objDTO.getTipo()),pe.encode(objDTO.getSenha()));
 		Cidade cid = new Cidade(objDTO.getCidadeId(), null, null);
 		Endereco end = new Endereco(null, objDTO.getLogradouro(), objDTO.getNumero(), objDTO.getComplemento(), objDTO.getBairro(), objDTO.getCep(), cli, cid);
-		cli.getEndereco().add(end);
+		cli.getEnderecos().add(end);
 		cli.getTelefones().add(objDTO.getTelefone1());
 		if (objDTO.getTelefone2()!=null) {
 			cli.getTelefones().add(objDTO.getTelefone2());
