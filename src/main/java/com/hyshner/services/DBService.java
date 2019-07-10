@@ -151,12 +151,10 @@ public class DBService {
 		
 		
 		
-	categoriaRepository.save(Arrays.asList(cat1, cat2, cat3, cat4,cat5,cat6,cat7 ));
+	categoriaRepository.save(Arrays.asList(cat1, cat2, cat3, cat4,cat5,cat6,cat7));
 	produtoRepository.save(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11));
 	estadoRepository.save(Arrays.asList(est1, est2));
 	cidadeRepository.save(Arrays.asList(c1, c2, c3));
-	clienteRepository.save(Arrays.asList(cli1));
-	enderecoRepository.save(Arrays.asList(e1, e2));
 	pedidoRepository.save(Arrays.asList(ped1, ped2));
 	pagamentoRepository.save(Arrays.asList(pgto1, pgto2));
 	itemPedidoRepository.save(Arrays.asList(ip1, ip2, ip3));
